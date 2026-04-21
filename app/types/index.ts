@@ -14,3 +14,6 @@ export interface Category {
   name: string;        // ✅ consistent with UI
   products: Product[];
 }
+export interface CartItem extends Product {
+  quantity: number;
+}
