@@ -2,6 +2,7 @@ import Link from "next/link";
 import ProductCard from "./components/product/ProductCard";
 import { getCategories } from "./lib/data";
 import { Category } from "./types";
+import { Product } from "./types/index";
 
 export default function HomePage() {
   const categories: Category[] = getCategories();
@@ -121,10 +122,10 @@ export default function HomePage() {
 
         <div className="fc-scroll-outer">
           <div className="fc-scroll">
-            {category.products.slice(0, 5).map((product: { id: any }) => (
-              <div  className="fc-card-wrap">
+            {category.products.slice(0, 5).map((product: Product) => (
+              <div key={product.id} className="fc-card-wrap">
                 <div className="fc-card-inner">
-                  <ProductCard key={product.id} product={product} />
+                  <ProductCard  product={product} />
                 </div>
               </div>
             ))}
