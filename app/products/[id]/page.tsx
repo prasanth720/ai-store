@@ -3,7 +3,7 @@
 import { getProductById } from "@/app/lib/data";
 import { useParams } from "@/node_modules/next/navigation";
 import { useEffect, useState } from "react";
-
+import { useCartStore } from "@/app/store/cartStore";
 
 
 
@@ -14,8 +14,15 @@ export default function ProductPage() {
   const [addedToCart, setAddedToCart] = useState(false);
   const [wishlist, setWishlist] = useState(false);
   const params = useParams();
+  const product = getProductById(params.id);
+  const addToCart = useCartStore((s:any) => s.addToCart);
   const handleAddToCart = () => {
-   
+    addToCart(product);  
+    setAddedToCart(true);
+  
+    setTimeout(() => {
+      setAddedToCart(false);
+    }, 1500);
   };
 
   const handleBuyNow = () => {
@@ -23,11 +30,8 @@ export default function ProductPage() {
   };
 
   const fmt = (n: number) => "₹" + n.toLocaleString("en-IN");
-  const product = getProductById(params.id);
+ 
 
-  useEffect(()=>{
-    console.log(product)
-  },[])
   return (
     <>
       <style>{`

@@ -47,7 +47,7 @@ export default function ProductCard({ product }: { product: Product }) {
     addToCart(product);
     toast.success(`${product.title} added to cart 🛒`);
   }}
-  className="bg-yellow-400 hover:bg-yellow-500 text-black text-xs sm:text-sm p-2 rounded font-medium"
+  className="bg-yellow-400 hover:bg-yellow-500 text-black text-[11px] sm:text-xs px-3 py-1.5 rounded-md font-medium w-fit"
 >
   Add to Cart
 </button>

@@ -3,6 +3,7 @@
 import { products } from "@/app/lib/data";
 import { Product } from "@/app/types/index";
 import { useMemo, useState } from "react";
+import ProductCard from "./ProductCard";
 
 
 export default function ProductsPage() {

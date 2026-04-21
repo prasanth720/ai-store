@@ -240,6 +240,5 @@ export const getCategories = (): Category[] => {
 };
 
 export const getProductById = (id: string) => {
-  console.log(id)
   return products.find((p) => p.id === id);
 };
