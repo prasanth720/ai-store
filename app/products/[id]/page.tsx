@@ -14,7 +14,10 @@ export default function ProductPage() {
   const [addedToCart, setAddedToCart] = useState(false);
   const [wishlist, setWishlist] = useState(false);
   const params = useParams();
-  const product = getProductById(params.id);
+  const id = Array.isArray(params.id)
+  ? params.id[0]
+  : params.id;
+  const product = id ? getProductById(id) : null;
   const addToCart = useCartStore((s:any) => s.addToCart);
   const handleAddToCart = () => {
     addToCart(product);  
