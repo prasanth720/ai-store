@@ -371,7 +371,7 @@ export default function ProductPage() {
             <div className="pd-img-main">
               {/* <span className="pd-badge-tag">{product.badge}</span>
               <span className="pd-discount-tag">−{product.discount}%</span> */}
-              <img src={product.image} alt={product.title} />
+              <img src={product!.image} alt={product!.title} />
             </div>
 
           </div>
