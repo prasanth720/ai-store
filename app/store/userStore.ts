@@ -13,7 +13,7 @@ interface UserState {
   loadUser: () => void;
 }
 
-export const useUserStore = create<UserState>((set: (arg0: { user: any; token: any; }) => void) => ({
+export const useUserStore = create<UserState>((set) => ({
   user: null,
   token: null,
 

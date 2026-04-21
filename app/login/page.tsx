@@ -11,24 +11,26 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [focused, setFocused] = useState("");
-  const login = useUserStore((s: { login: any; }) => s.login);
+  const login = useUserStore((s) => s.login);
   const router = useRouter();
-  const handleSubmit = async (e: any) => {
+ 
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
     e.preventDefault();
-  
+
     setLoading(true);
-  
+
     const success = await login(email);
-  
+
     setLoading(false);
-  
+
     if (success) {
       router.push("/");
     } else {
       alert("Login failed");
     }
   };
-
   return (
     <div className={styles.root}>
 

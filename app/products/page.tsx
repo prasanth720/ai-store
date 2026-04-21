@@ -15,7 +15,6 @@ export default function ProductsPage() {
   const searchParam = params.get("search") || "";
   const categoryParam = params.get("category") || "all";
 
-  const [search, setSearch] = useState("");
   const [sort, setSort] = useState("");
   const [page, setPage] = useState(1);
 

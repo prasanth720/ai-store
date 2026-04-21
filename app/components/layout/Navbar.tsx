@@ -1,25 +1,30 @@
 "use client";
 
 import { useCartStore } from "@/app/store/cartStore";
+import { useUserStore } from "@/app/store/userStore";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import Button from "../ui/Button";
-import { usePathname } from "@/node_modules/next/navigation";
-import { useUserStore } from "@/app/store/userStore";
 import Image from "next/image";
 
 export default function Navbar() {
   const pathname = usePathname();
-  if (pathname === "/login" ) return null;
+  const router = useRouter();
+
   const cart = useCartStore((s) => s.cart);
+  const { user, logout } = useUserStore();
+
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
-  const router = useRouter();
-  const { user, logout } = useUserStore();
+
+  // ✅ CONDITION AFTER HOOKS
+  if (pathname === "/login") return null;
+
   const handleSearch = () => {
     if (!search.trim()) return;
     router.push(`/products?search=${search}`);
+    setSearch(""); // optional UX
   };
 
   return (
