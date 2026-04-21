@@ -26,7 +26,7 @@ export default function ProductsPage() {
 const filteredProducts: Product[] = useMemo(() => {
   let result = [...products];
 
-  const query = (searchParam || search).toLowerCase().trim();
+  const query = (searchParam).toLowerCase().trim();
 
   if (query) {
     result = result.filter((p) => {
@@ -49,7 +49,7 @@ const filteredProducts: Product[] = useMemo(() => {
   else if (sort === "rating") result.sort((a, b) => b.rating - a.rating);
 
   return result;
-}, [search, searchParam, categoryParam, sort]);
+}, [ searchParam, categoryParam, sort]);
 
   const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
 
