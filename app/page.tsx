@@ -122,9 +122,9 @@ export default function HomePage() {
         <div className="fc-scroll-outer">
           <div className="fc-scroll">
             {category.products.slice(0, 5).map((product: { id: any }) => (
-              <div key={product.id} className="fc-card-wrap">
+              <div  className="fc-card-wrap">
                 <div className="fc-card-inner">
-                  <ProductCard product={product} />
+                  <ProductCard key={product.id} product={product} />
                 </div>
               </div>
             ))}
