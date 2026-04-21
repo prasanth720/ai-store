@@ -215,7 +215,7 @@ app/
 ### 1️⃣ Clone repo
 
 ```bash
-git clone https://github.com/your-repo/ai-store.git
+git clone https://github.com/prasanth720/ai-store.git
 cd ai-store
 
 npm install
