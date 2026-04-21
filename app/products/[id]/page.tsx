@@ -369,8 +369,8 @@ export default function ProductPage() {
           {/* IMAGE PANEL */}
           <div className="pd-img-panel">
             <div className="pd-img-main">
-              <span className="pd-badge-tag">{product.badge}</span>
-              <span className="pd-discount-tag">−{product.discount}%</span>
+              {/* <span className="pd-badge-tag">{product.badge}</span>
+              <span className="pd-discount-tag">−{product.discount}%</span> */}
               <img src={product.image} alt={product.title} />
             </div>
 
@@ -417,11 +417,11 @@ export default function ProductPage() {
                 <span className="pd-qty-num">{quantity}</span>
                 <button className="pd-qty-btn" onClick={() => setQuantity(q => Math.min(10, q + 1))}>+</button>
               </div>
-              {product.inStock && (
+              {/* {product.inStock && (
                 <span className="pd-stock">
                   <span className="pd-stock-dot" /> In Stock
                 </span>
-              )}
+              )} */}
             </div>
 
             {/* CTA */}
@@ -475,7 +475,7 @@ export default function ProductPage() {
                 <circle cx="5.5" cy="18.5" r="2.5"/>
                 <circle cx="18.5" cy="18.5" r="2.5"/>
               </svg>
-              {product.delivery}
+              {/* {product.delivery} */}
             </div>
           </div>
         </div>
