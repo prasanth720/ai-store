@@ -378,12 +378,12 @@ export default function ProductPage() {
 
           {/* INFO PANEL */}
           <div className="pd-info">
-          <h1 className="pd-name">{product.title}</h1>
+          <h1 className="pd-name">{product!.title}</h1>
          
             {/* Price */}
             <div className="pd-price-block">
               <div className="pd-price-row">
-                <span className="pd-price">{fmt(product.price)}</span>
+                <span className="pd-price">{fmt(product!.price)}</span>
                 {/* <span className="pd-original">{fmt(product.originalPrice)}</span>
                 <span className="pd-save">Save {fmt(product.originalPrice - product.price)}</span> */}
               </div>
